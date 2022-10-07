@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue dans votre Agence de location {% endblock %}
+
+{% block body %}
+
+AFFICHAGE DES VOITURES A RESERVER
+
+    <section class="row articles">
+
+        {% for item in vehicule %}
+    
+
+            <article class="col-md-4 mx-auto text-center border border-dark mb-3 p-3 mt-3 mr-1">
+                 <h2>{{ item.titre }}</h2>
+           
+             {# <div class="metadata">Ecrit le {{ item.createdAt |date('d/m/Y à H:i:s') }} dans la catégorie {{ item.category.title }}</div>
+            
+             <div class="content">
+             
+           
+             {{item.content|raw}} #}
+            {# <a href="{{ path('agence_show',{id: item.id}) }}" class="btn btn-primary">Lire la suite</a> #}
+
+        {{ item.modele }}
+        <img src="{{ item.photo }}" class="img-fluid" alt="">
+        {# {{ item.photo }} #}
+        
+        {{ item.prixJournalier }}€
+        {{ item.marque }}
+        {{ item.dateEnregistrement|date('d/m/Y à H:i:s') }}
+             
+
+        <a class="btn btn-primary" href="{{ path('commande_vehicule',{id:item.id})}}">Reserver</a>
+       
+    
+            </div>
+
+    </article>
+{% endfor %}
+</section>
+
+{% endblock %}

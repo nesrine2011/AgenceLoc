@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+{{ form_start(formCommande, {
+        attr: {
+            novalidate: 'novalidate'
+        }
+    }) }}
+
+{{form_row(formCommande.date_heure_depart)}}
+{{form_row(formCommande.date_heure_fin)}}
+<button class="btn btn-primary mt-2" type="submit">Reserver</button>
+
+
+
+{{ form_end(formCommande) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

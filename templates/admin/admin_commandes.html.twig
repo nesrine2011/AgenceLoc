@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<table class='table'>
+
+<thead>
+<tr>
+    <th>pseudo</th>
+    <th>nom</th>
+    <th>prenom</th>
+    <th>email</th>
+    <th>civilite</th>
+    <th>dateEnregistrement</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+{% for item in commandes %}
+    <td>{{item.id}}</td>
+    <td>{{item.membre.nom}}</td>
+    <td>{{item.vehicule.marque}}</td>
+    <td>{{item.prixtotal}}</td>
+    <td>{{item.dateheuredepart}}|date('d/m/Y à H:i:s')</td>
+    <td>{{item.dateheurefin}}|date('d/m/Y à H:i:s')</td>
+    <td> {{item.dateEnregistrement|date('d/m/Y à H:i:s')}}</td>
+{% endfor %}
+</tr>
+</tbody>
+
+
+</table>
+
+
+{% endblock %}
